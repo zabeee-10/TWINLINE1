@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #20BF55;
+  --color-brand-secondary: #FFFEED;
+  --color-brand-text: #000000;
+  --color-brand-link: #171200;
+  
+  --font-sans: "Work Sans", Arial, sans-serif;
+  --font-heading: "Helvetica Neue", "Work Sans", sans-serif;
+
+  --animate-slide-up: slide-up 40s linear infinite;
+  --animate-slide-down: slide-down 40s linear infinite;
+
+  @keyframes slide-up {
+    from { transform: translateY(0); }
+    to { transform: translateY(-50%); }
+  }
+
+  @keyframes slide-down {
+    from { transform: translateY(-50%); }
+    to { transform: translateY(0); }
+  }
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-white text-brand-text overflow-x-hidden;
+    scroll-behavior: smooth;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply relative text-gray-200 transition-all hover:text-white pb-1 tracking-wide text-sm font-medium hover:-translate-y-0.5 inline-block;
+  }
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-[2px] bg-brand-primary scale-x-0 origin-right transition-transform duration-300 drop-shadow-[0_0_8px_rgba(32,191,85,0.8)];
+  }
+  .nav-link:hover::after, .nav-link.active::after {
+    @apply scale-x-100 origin-left;
+  }
+  .nav-link.active {
+    @apply text-white;
+  }
+}
