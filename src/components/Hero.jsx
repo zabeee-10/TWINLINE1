@@ -2,6 +2,12 @@ import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 
+// Import local assets for Hero cards
+import pebBuildingImg from "../assets/peb building .jpeg";
+import sportsInfraImg from "../assets/sports infra.jpeg";
+import steelStructuresImg from "../assets/steel structures.jpeg";
+import turfImg from "../assets/turf.jpeg";
+
 const Hero = () => {
   const [activeHover, setActiveHover] = useState(null);
   
@@ -35,7 +41,7 @@ const Hero = () => {
     {
       title: "Steel Structures",
       subtitle: "Industrial Framing",
-      image: "https://static.wixstatic.com/media/a6d112_71ac5b56f4714f8ea972ecc5edce7f69~mv2.jpg/v1/fit/w_720,h_624,q_90,enc_avif,quality_auto/a6d112_71ac5b56f4714f8ea972ecc5edce7f69~mv2.jpg",
+      image: steelStructuresImg,
       position: "top-[10%] left-[5%]",
       width: "w-[280px]",
       depth: 1, // Determines speeds
@@ -44,7 +50,7 @@ const Hero = () => {
     {
       title: "PEB Buildings",
       subtitle: "Engineered Structures",
-      image: "https://static.wixstatic.com/media/a6d112_08ea916bc55f4c9784db2cf250f197d1~mv2.jpg/v1/fit/w_680,h_510,q_90,enc_avif,quality_auto/a6d112_08ea916bc55f4c9784db2cf250f197d1~mv2.jpg",
+      image: pebBuildingImg,
       position: "top-[30%] right-[5%]",
       width: "w-[320px]",
       depth: 1.5,
@@ -53,7 +59,7 @@ const Hero = () => {
     {
       title: "Sports Infra",
       subtitle: "Stadiums & Facilities",
-      image: "https://static.wixstatic.com/media/a6d112_26a816860d394cbb80b32bf4b9e7edc0~mv2.jpg/v1/fit/w_556,h_510,q_90,enc_avif,quality_auto/a6d112_26a816860d394cbb80b32bf4b9e7edc0~mv2.jpg",
+      image: sportsInfraImg,
       position: "bottom-[15%] left-[15%]",
       width: "w-[300px]",
       depth: 0.8,
@@ -62,7 +68,7 @@ const Hero = () => {
     {
       title: "Turf Projects",
       subtitle: "FIFA Standard Surfaces",
-      image: "https://static.wixstatic.com/media/a6d112_3442d87ff5b84d9ca053fb1142cb2f6f~mv2.jpg/v1/fit/w_720,h_624,q_90,enc_avif,quality_auto/a6d112_3442d87ff5b84d9ca053fb1142cb2f6f~mv2.jpg",
+      image: turfImg,
       position: "bottom-[5%] right-[20%]",
       width: "w-[260px]",
       depth: 1.2,
