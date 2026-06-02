@@ -1,14 +1,12 @@
 import { motion } from "framer-motion";
 
+import logo1 from "../assets/Logos of the projects don/IMG_9853.JPG.jpeg";
+import logo2 from "../assets/Logos of the projects don/IMG_9878.JPG.jpeg";
+import logo3 from "../assets/Logos of the projects don/IMG_9879.PNG";
+import logo4 from "../assets/Logos of the projects don/IMG_9883.PNG";
+
 const Clients = () => {
-  const clients = [
-    "https://static.wixstatic.com/media/c837a6_eee981d6e5314522abf72095136c74be~mv2.png/v1/fill/w_218,h_102,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c837a6_eee981d6e5314522abf72095136c74be~mv2.png",
-    "https://static.wixstatic.com/media/c837a6_0b38254265324ec795dbde5e40f36a40~mv2.png/v1/fill/w_230,h_102,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/pjx_log.png",
-    "https://static.wixstatic.com/media/c837a6_d487752f58274f02a3b4a3846ef8946d~mv2.png/v1/fill/w_230,h_102,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/motorks_log.png",
-    "https://static.wixstatic.com/media/c837a6_318fc5d9088a454d948bbe1bb5b6f8b4~mv2.png/v1/fill/w_218,h_102,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/natura_logo.png",
-    "https://static.wixstatic.com/media/c837a6_227980bf0d1347f485eb5c00f9145652~mv2.png/v1/fill/w_230,h_102,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/image_logo.png",
-    "https://static.wixstatic.com/media/84770f_85c01069f145488cb0691d22499ae74f~mv2.png/v1/fill/w_230,h_102,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/drivilux.png"
-  ];
+  const clients = [logo1, logo2, logo3, logo4];
 
   return (
     <section className="py-20 bg-white border-t border-gray-100">

@@ -65,15 +65,16 @@ const Navbar = () => {
 
           {/* RIGHT: CTA Button */}
           <div className="hidden md:flex items-center">
-            <a 
-              href="https://www.twinlinegroup.com/get-a-quote" 
-              target="_blank" 
-              rel="noreferrer" 
-              className="relative group overflow-hidden bg-gradient-to-r from-brand-primary to-green-500 text-white font-bold py-2.5 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_4px_15px_rgba(32,191,85,0.4)] hover:shadow-[0_8px_25px_rgba(32,191,85,0.6)] uppercase tracking-wider text-sm"
+            <Link 
+              to="contact" 
+              smooth={true} 
+              duration={500} 
+              offset={-90}
+              className="relative group overflow-hidden bg-gradient-to-r from-brand-primary to-green-500 text-white font-bold py-2.5 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_4px_15px_rgba(32,191,85,0.4)] hover:shadow-[0_8px_25px_rgba(32,191,85,0.6)] uppercase tracking-wider text-sm cursor-pointer"
             >
               <span className="relative z-10">Get a Quote</span>
               <div className="absolute inset-0 w-full h-full bg-white/20 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out z-0"></div>
-            </a>
+            </Link>
           </div>
 
           {/* Hamburger Menu Toggle */}
@@ -120,14 +121,16 @@ const Navbar = () => {
                 </Link>
               ))}
               <div className="pt-4 mt-2 border-t border-white/10 w-full">
-                <a 
-                  href="https://www.twinlinegroup.com/get-a-quote" 
-                  target="_blank" 
-                  rel="noreferrer" 
-                  className="block text-center bg-gradient-to-r from-brand-primary to-green-500 text-white font-bold py-3 rounded-lg shadow-[0_4px_15px_rgba(32,191,85,0.4)] uppercase tracking-wider"
+                <Link 
+                  to="contact" 
+                  smooth={true} 
+                  duration={500} 
+                  offset={-90}
+                  onClick={() => setIsOpen(false)}
+                  className="block text-center bg-gradient-to-r from-brand-primary to-green-500 text-white font-bold py-3 rounded-lg shadow-[0_4px_15px_rgba(32,191,85,0.4)] uppercase tracking-wider cursor-pointer"
                 >
                   Get a Quote
-                </a>
+                </Link>
               </div>
             </div>
           </motion.div>

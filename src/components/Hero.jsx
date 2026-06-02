@@ -148,15 +148,16 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
               className="flex flex-col sm:flex-row justify-center lg:justify-start gap-5 pt-4"
             >
-              <a 
-                href="https://www.twinlinegroup.com/get-a-quote" 
-                target="_blank" 
-                rel="noreferrer" 
-                className="group relative bg-[#171200] border border-brand-primary text-brand-primary font-bold py-4 px-10 rounded-sm hover:-translate-y-1 transition-all duration-300 text-center uppercase tracking-widest overflow-hidden"
+              <Link 
+                to="contact" 
+                smooth={true} 
+                duration={500} 
+                offset={-70}
+                className="group relative bg-[#171200] border border-brand-primary text-brand-primary font-bold py-4 px-10 rounded-sm hover:-translate-y-1 transition-all duration-300 text-center uppercase tracking-widest overflow-hidden cursor-pointer"
               >
                 <span className="relative z-10 group-hover:text-[#171200] transition-colors duration-300">Get a Quote</span>
                 <span className="absolute inset-0 bg-brand-primary shadow-[0_0_20px_rgba(32,191,85,0.8)] scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 z-0"></span>
-              </a>
+              </Link>
               <Link 
                 to="projects" 
                 smooth={true} 

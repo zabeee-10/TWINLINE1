@@ -95,11 +95,11 @@ const Loader = ({ onComplete }) => {
       {/* Subtext revealing elegantly */}
       <motion.div 
         initial={{ opacity: 0, y: 10, letterSpacing: "0.1em" }}
-        animate={phase >= 2 ? { opacity: 1, y: 0, letterSpacing: "0.3em" } : {}}
+        animate={phase >= 2 ? { opacity: 1, y: 0, letterSpacing: "0.2em" } : {}}
         transition={{ duration: 1.2, ease: "easeOut" }}
-        className="absolute bottom-[20%] text-white/50 text-xs md:text-sm uppercase font-light pointer-events-none"
+        className="absolute bottom-[20%] text-white/50 text-[10px] sm:text-xs md:text-sm uppercase font-light pointer-events-none text-center px-4"
       >
-        Engineered for Excellence
+        Where steel buildings meet innovation
       </motion.div>
 
     </motion.div>

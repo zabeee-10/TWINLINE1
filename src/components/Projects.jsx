@@ -1,11 +1,50 @@
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Grid, List, Search, ArrowUpRight, Compass } from "lucide-react";
+import { MapPin, Grid, List, Search, ArrowUpRight, Compass, X, Play } from "lucide-react";
+
+import alhindFlat from "../assets/projects  twin/alhind flat.jpeg";
+import badmintonCourt from "../assets/projects  twin/Badminton Court.jpeg";
+import butterflyStructure from "../assets/projects  twin/Butterfly Structure.jpeg";
+import keralaMedicalCollege from "../assets/projects  twin/Kerala Medical College.jpeg";
+import mesMedicalCollege from "../assets/projects  twin/MES Medical College.jpeg";
+import mezzanineFloorStructure from "../assets/projects  twin/Mezzanine Floor Structure.jpeg";
+import pkDasMedicalSciences from "../assets/projects  twin/PK DAS Institute of Medical Sciences.jpeg";
+import residentialContemporary from "../assets/projects  twin/Residential Property Contemporary.jpeg";
+import residentialModern from "../assets/projects  twin/Residential Property modern.jpeg";
+import turfImage from "../assets/projects  twin/turf.jpeg";
+
+import pkDas1 from "../assets/pk das images/WhatsApp Image 2026-06-03 at 1.26.04 AM (1).jpeg";
+import pkDas2 from "../assets/pk das images/WhatsApp Image 2026-06-03 at 1.26.04 AM.jpeg";
+import alhindVideo from "../assets/intro video/alhind vdo.mp4";
+import medicalCollegeVideo from "../assets/intro video/medical college vdo.mp4";
+import turfVideo from "../assets/intro video/turf vdo.mp4";
+import mezzanineImg from "../assets/pk das images/WhatsApp Image 2026-06-03 at 2.02.03 AM.jpeg";
+import mezzanineVideo from "../assets/pk das images/WhatsApp Video 2026-06-03 at 2.02.05 AM.mp4";
 
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [viewMode, setViewMode] = useState("grid"); // "grid" | "list"
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+  const handleOpenProject = (project) => {
+    setSelectedProject(project);
+    setActiveImageIndex(0);
+  };
+
+  const mediaItems = useMemo(() => {
+    if (!selectedProject) return [];
+    if (!selectedProject.gallery) {
+      return [{ type: "image", src: selectedProject.image }];
+    }
+    return selectedProject.gallery.map(item => {
+      if (typeof item === "string") {
+        return { type: "image", src: item };
+      }
+      return item;
+    });
+  }, [selectedProject]);
 
   const categories = ["All", "Healthcare & Education", "Residential", "Industrial & Steel", "Sports & Recreation"];
 
@@ -16,8 +55,10 @@ const Projects = () => {
       subtitle: "Hospital and Medical College",
       location: "Ottapalam, Palakkad",
       category: "Healthcare & Education",
-      image: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=800&q=80",
+      image: pkDasMedicalSciences,
+      gallery: [pkDasMedicalSciences, pkDas1, pkDas2],
       description: "Heavy-duty structural steel roofing and support structures for the medical college campus.",
+      detailedDescription: "Designed and engineered heavy-duty structural steel roofing systems and robust support frames for the academic blocks and clinical wings of the PK DAS Institute of Medical Sciences. The project involved complete design engineering, precise fabrication, and rigorous quality-controlled onsite installation of large-span steel trusses. The structures are engineered to optimize ceiling height, support advanced roofing sheet insulation, and ensure long-term structural integrity for institutional environments.",
       specs: "Premium Truss Roofing"
     },
     {
@@ -26,8 +67,13 @@ const Projects = () => {
       subtitle: "Academic Campus & Clinical Block",
       location: "Mangode, Palakkad",
       category: "Healthcare & Education",
-      image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80",
+      image: keralaMedicalCollege,
+      gallery: [
+        { type: "image", src: keralaMedicalCollege },
+        { type: "video", src: medicalCollegeVideo }
+      ],
       description: "Pre-engineered structural columns, roof trusses, and safety compliance fabrication.",
+      detailedDescription: "The Kerala Medical College project at Mangode, Palakkad involved structural design, fabrication, and precise installation of robust pre-engineered columns and heavy-duty steel roof trusses. Twinline engineered columns and support infrastructure to guarantee the highest level of structural strength and compliance with safety regulations. Watch the site walk-through video in our gallery to see the framing execution phase.",
       specs: "Industrial Steel Truss"
     },
     {
@@ -36,8 +82,13 @@ const Projects = () => {
       subtitle: "Residential Apartment Block",
       location: "Calicut",
       category: "Residential",
-      image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80",
+      image: alhindFlat,
+      gallery: [
+        { type: "image", src: alhindFlat },
+        { type: "video", src: alhindVideo }
+      ],
       description: "Structural metal deck slab framing and architectural metal design installations.",
+      detailedDescription: "The Alhind Flat project is a landmark multi-storey residential development in Calicut. Twinline was chosen to deliver state-of-the-art structural metal deck slab framing and architectural steel installations. This approach optimized the construction timeline, reduced foundation loads, and ensured unmatched structural alignment across all apartment floors. Watch our project walk-through video in our gallery to see the fabrication and installation phases on-site.",
       specs: "Multi-Storey Decking"
     },
     {
@@ -46,8 +97,14 @@ const Projects = () => {
       subtitle: "Industrial Storage & Operations Deck",
       location: "Thalassery",
       category: "Industrial & Steel",
-      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
+      image: mezzanineFloorStructure,
+      gallery: [
+        { type: "image", src: mezzanineFloorStructure },
+        { type: "image", src: mezzanineImg },
+        { type: "video", src: mezzanineVideo }
+      ],
       description: "Heavy structural mezzanine floor installation for optimized storage and high-load capacity.",
+      detailedDescription: "The Thalassery Mezzanine Floor Structure project is an advanced industrial storage solution utilizing heavy structural steel beams and high-load columns. Twinline engineered, fabricated, and installed the steel operations deck to maximize vertical workspace and support high operational loads safely. Watch the installation and walk-through details in our project gallery.",
       specs: "High-Load Mezzanine"
     },
     {
@@ -56,7 +113,7 @@ const Projects = () => {
       subtitle: "Modern Luxury Villa Roofing",
       location: "Kondotty",
       category: "Residential",
-      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+      image: residentialModern,
       description: "Custom aesthetic roofing design using durable structural frames and thermal insulated sheets.",
       specs: "Insulated Roofing"
     },
@@ -66,7 +123,7 @@ const Projects = () => {
       subtitle: "Contemporary Private Villa Structure",
       location: "Edathanatukara",
       category: "Residential",
-      image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80",
+      image: residentialContemporary,
       description: "Design, fabrication, and installation of lightweight high-tensile roof frames.",
       specs: "Lightweight Framing"
     },
@@ -76,7 +133,7 @@ const Projects = () => {
       subtitle: "Indoor Sports Complex & Steel Hall",
       location: "Coimbatore",
       category: "Sports & Recreation",
-      image: "https://images.unsplash.com/photo-1521537634581-0dced2fee2ef?auto=format&fit=crop&w=800&q=80",
+      image: badmintonCourt,
       description: "Clear-span steel frame truss roof structure allowing completely unobstructed indoor sports space.",
       specs: "Clear-Span Trusses"
     },
@@ -86,7 +143,7 @@ const Projects = () => {
       subtitle: "Aesthetic Architectural Truss & Canopy",
       location: "Ernakulam",
       category: "Industrial & Steel",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
+      image: butterflyStructure,
       description: "Complex geometrical butterfly design canopy showing advanced fabrication accuracy and craft.",
       specs: "Architectural Truss"
     },
@@ -96,8 +153,13 @@ const Projects = () => {
       subtitle: "Sports Arena Roof Framing",
       location: "Shornur",
       category: "Sports & Recreation",
-      image: "https://images.unsplash.com/photo-1529900748604-07564a03e7a6?auto=format&fit=crop&w=800&q=80",
+      image: turfImage,
+      gallery: [
+        { type: "image", src: turfImage },
+        { type: "video", src: turfVideo }
+      ],
       description: "Large scale structural framing for football and multi-sport turf facilities.",
+      detailedDescription: "The Shornur Turf project features a large-scale clear-span structural roofing and side framing designed for football and multi-sport facilities. Twinline engineered high-tensile steel frame structures that provide complete cover and ventilation while maintaining stability across extensive ground spans. Watch our project walk-through video in the gallery to see the finished sports arena.",
       specs: "Large Frame Roofing"
     },
     {
@@ -106,7 +168,7 @@ const Projects = () => {
       subtitle: "Academic Block & Healthcare Facilities",
       location: "Perinthalmanna",
       category: "Healthcare & Education",
-      image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80",
+      image: mesMedicalCollege,
       description: "Major structural expansion projects, roofing panels, and support columns fabrication.",
       specs: "Institutional Expansion"
     }
@@ -262,7 +324,8 @@ const Projects = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, scale: 0.95 }}
                       transition={{ duration: 0.4, delay: idx * 0.05 }}
-                      className="group bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full"
+                      onClick={() => handleOpenProject(project)}
+                      className="group bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full cursor-pointer"
                     >
                       {/* Card Image Frame */}
                       <div className="relative h-56 md:h-60 overflow-hidden bg-gray-100">
@@ -334,6 +397,7 @@ const Projects = () => {
                         <motion.tr
                           key={project.id}
                           layout
+                          onClick={() => handleOpenProject(project)}
                           className="hover:bg-brand-primary/5 transition-colors group cursor-pointer"
                         >
                           <td className="py-5 px-6 text-sm font-semibold text-gray-400 group-hover:text-brand-primary transition-colors">
@@ -395,22 +459,145 @@ const Projects = () => {
           )}
         </div>
 
-        {/* Call to Action: Link to Brochure/Main Site */}
-        <div className="mt-16 text-center">
-          <motion.a 
-            whileHover={{ scale: 1.03, boxShadow: "0 10px 25px -5px rgba(32, 191, 85, 0.4)" }}
-            whileTap={{ scale: 0.98 }}
-            href="https://www.twinlinegroup.com/projects" 
-            target="_blank" 
-            rel="noreferrer" 
-            className="inline-flex items-center gap-2 bg-brand-primary hover:bg-emerald-600 text-white font-bold py-3.5 px-8 rounded-xl transition-all duration-300 shadow-md shadow-brand-primary/20"
-          >
-            VIEW ALL PROJECTS ON WEBSITE
-            <ArrowUpRight size={16} />
-          </motion.a>
-        </div>
 
       </div>
+
+      {/* Detail Modal overlay */}
+      <AnimatePresence>
+        {selectedProject && (
+          <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 sm:p-6 md:p-8">
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedProject(null)}
+              className="absolute inset-0 bg-black/80 backdrop-blur-md"
+            />
+
+            {/* Modal Box */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 30 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 30 }}
+              transition={{ type: "spring", duration: 0.5 }}
+              className="relative w-full max-w-4xl bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row max-h-[90vh] md:max-h-[80vh] z-10"
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-4 right-4 z-50 p-2.5 rounded-full bg-white/10 hover:bg-white/20 md:bg-gray-100 md:hover:bg-gray-200 text-white md:text-gray-600 transition-colors shadow-md focus:outline-none"
+                aria-label="Close modal"
+              >
+                <X size={20} />
+              </button>
+
+              {/* Left Column: Image Viewer */}
+              <div className="w-full md:w-1/2 bg-gray-950 flex flex-col justify-between relative min-h-[300px] md:min-h-[400px]">
+                {/* Main Active Image */}
+                <div className="relative flex-1 flex items-center justify-center overflow-hidden">
+                  <AnimatePresence mode="wait">
+                    {mediaItems[activeImageIndex]?.type === "video" ? (
+                      <motion.video
+                        key={activeImageIndex}
+                        src={mediaItems[activeImageIndex].src}
+                        controls
+                        autoPlay
+                        muted
+                        className="w-full h-full object-cover"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    ) : (
+                      <motion.img
+                        key={activeImageIndex}
+                        src={mediaItems[activeImageIndex]?.src}
+                        alt={selectedProject.title}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="w-full h-full object-cover"
+                      />
+                    )}
+                  </AnimatePresence>
+                  {/* Category Tag */}
+                  <span className="absolute top-4 left-4 bg-brand-primary/95 text-white text-xs font-bold px-3.5 py-1.5 rounded-xl shadow-md z-30">
+                    {selectedProject.category}
+                  </span>
+                </div>
+
+                {/* Gallery Thumbnail Strip (only if there are multiple images) */}
+                {mediaItems.length > 1 && (
+                  <div className="p-4 bg-black/60 backdrop-blur-xs flex items-center gap-3 overflow-x-auto border-t border-white/10 z-30">
+                    {mediaItems.map((item, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setActiveImageIndex(i)}
+                        className={`relative w-16 h-12 rounded-lg overflow-hidden flex-shrink-0 transition-all border-2 ${
+                          activeImageIndex === i ? "border-brand-primary scale-105" : "border-transparent opacity-60 hover:opacity-100"
+                        }`}
+                      >
+                        {item.type === "video" ? (
+                          <div className="w-full h-full bg-gray-900 flex items-center justify-center text-white">
+                            <Play size={18} className="text-brand-primary fill-brand-primary" />
+                          </div>
+                        ) : (
+                          <img src={item.src} alt="" className="w-full h-full object-cover" />
+                        )}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Right Column: Project details */}
+              <div className="w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-between overflow-y-auto max-h-[50vh] md:max-h-full">
+                <div className="space-y-6">
+                  {/* Location badge */}
+                  <div className="flex items-center gap-1.5 text-brand-primary text-xs font-bold uppercase tracking-wider">
+                    <MapPin size={14} />
+                    <span>{selectedProject.location}</span>
+                  </div>
+
+                  {/* Title & Subtitle */}
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-heading font-bold text-gray-900 leading-tight">
+                      {selectedProject.title}
+                    </h3>
+                    <p className="text-sm font-semibold text-gray-500 mt-1 uppercase tracking-wide">
+                      {selectedProject.subtitle}
+                    </p>
+                  </div>
+
+                  {/* Divider */}
+                  <div className="w-16 h-1 bg-brand-primary rounded-full"></div>
+
+                  {/* Description */}
+                  <div className="space-y-4">
+                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest">Project Description</h4>
+                    <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                      {selectedProject.detailedDescription || selectedProject.description}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Specs pill at bottom */}
+                <div className="pt-6 mt-6 border-t border-gray-100 flex flex-wrap items-center justify-between gap-4">
+                  <div>
+                    <span className="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-1">Technical Specs</span>
+                    <span className="inline-block bg-brand-primary/10 text-brand-primary text-xs font-bold px-3 py-1.5 rounded-lg border border-brand-primary/10">
+                      {selectedProject.specs}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
