@@ -1,0 +1,21 @@
+{
+  "name": "TwinLine Group — Pre-Engineered Steel Buildings & Sports Infrastructure",
+  "short_name": "TwinLine Group",
+  "description": "Kerala's leading pre-engineered steel building manufacturer & sports infrastructure contractor. Expert in PEB structures, space frames, tubular steel, roofing solutions & turf construction.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#20BF55",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "construction", "engineering"],
+  "lang": "en",
+  "dir": "ltr"
+}

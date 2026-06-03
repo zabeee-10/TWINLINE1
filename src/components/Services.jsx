@@ -152,7 +152,7 @@ const Services = () => {
             transition={{ delay: 0.3 }}
             className="text-gray-500 text-sm md:text-base leading-relaxed"
           >
-            We provide cutting-edge steel structure solutions and high-performance sports infrastructure, ensuring cost-efficiency, durability, and rapid execution for diverse industrial and recreational needs.
+            We provide cutting-edge pre-engineered building (PEB), space frame, tubular steel, and multi-storied steel structure solutions along with high-performance sports infrastructure — ensuring cost-efficiency, durability, and rapid execution across Kerala and India.
           </motion.p>
         </div>
 
@@ -181,7 +181,7 @@ const Services = () => {
 
                 <img 
                   src={service.image} 
-                  alt={service.title} 
+                  alt={`${service.title} — steel structure construction service by TwinLine Group Kerala`} 
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                   loading="lazy"
                 />
@@ -201,6 +201,7 @@ const Services = () => {
                   <button 
                     onClick={() => handleOpenService(service)}
                     className="text-brand-primary font-bold text-xs hover:text-emerald-600 transition-colors uppercase tracking-wider cursor-pointer focus:outline-none text-left"
+                    aria-label={`Learn more about ${service.title} service by TwinLine Group`}
                   >
                     LEARN MORE
                   </button>

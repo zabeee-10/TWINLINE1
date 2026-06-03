@@ -222,7 +222,7 @@ const Projects = () => {
             className="h-1 bg-brand-primary mx-auto rounded-full"
           ></motion.div>
           <p className="mt-4 text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
-            Discover how Twinline delivers state-of-the-art structural steel fabrication, high-durability roofing, and precision engineering across institutional, sports, and residential sectors.
+            Discover how TwinLine Group delivers state-of-the-art structural steel fabrication, pre-engineered buildings, sports infrastructure, high-durability roofing, and precision engineering across institutional, sports, and residential sectors in Kerala and India.
           </p>
         </div>
 
@@ -331,7 +331,7 @@ const Projects = () => {
                       <div className="relative h-56 md:h-60 overflow-hidden bg-gray-100">
                         <img
                           src={project.image}
-                          alt={project.title}
+                          alt={`${project.title} — ${project.subtitle} at ${project.location} by TwinLine Group`}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                           loading="lazy"
                         />
@@ -364,7 +364,7 @@ const Projects = () => {
                           <span className="text-xs text-gray-400 font-medium bg-gray-50 px-2.5 py-1 rounded-md">
                             {project.specs}
                           </span>
-                          <span className="text-brand-primary font-bold text-xs flex items-center gap-1 group-hover:translate-x-1 transition-transform cursor-pointer">
+                          <span className="text-brand-primary font-bold text-xs flex items-center gap-1 group-hover:translate-x-1 transition-transform cursor-pointer" aria-label={`View details about ${project.title} project`}>
                             Learn More <ArrowUpRight size={14} />
                           </span>
                         </div>

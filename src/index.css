@@ -24,8 +24,9 @@
 }
 
 @layer base {
-  body {
+  html, body {
     @apply font-sans bg-white text-brand-text overflow-x-hidden;
+    max-width: 100vw;
     scroll-behavior: smooth;
   }
   h1, h2, h3, h4, h5, h6 {

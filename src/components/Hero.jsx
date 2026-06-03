@@ -42,6 +42,7 @@ const Hero = () => {
       title: "Steel Structures",
       subtitle: "Industrial Framing",
       image: steelStructuresImg,
+      alt: "Industrial steel structure fabrication and framing by TwinLine Group Kerala",
       position: "top-[10%] left-[5%]",
       width: "w-[280px]",
       depth: 1, // Determines speeds
@@ -51,6 +52,7 @@ const Hero = () => {
       title: "PEB Buildings",
       subtitle: "Engineered Structures",
       image: pebBuildingImg,
+      alt: "Pre-engineered building (PEB) construction project by TwinLine Group India",
       position: "top-[30%] right-[5%]",
       width: "w-[320px]",
       depth: 1.5,
@@ -60,6 +62,7 @@ const Hero = () => {
       title: "Sports Infra",
       subtitle: "Stadiums & Facilities",
       image: sportsInfraImg,
+      alt: "Sports infrastructure and stadium construction by TwinLine Group Kerala",
       position: "bottom-[15%] left-[15%]",
       width: "w-[300px]",
       depth: 0.8,
@@ -69,6 +72,7 @@ const Hero = () => {
       title: "Turf Projects",
       subtitle: "FIFA Standard Surfaces",
       image: turfImg,
+      alt: "FIFA standard football turf construction and sports facility roofing by TwinLine Group",
       position: "bottom-[5%] right-[20%]",
       width: "w-[260px]",
       depth: 1.2,
@@ -77,7 +81,7 @@ const Hero = () => {
   ];
 
   return (
-    <section id="home" className="relative h-screen min-h-[900px] overflow-hidden bg-black flex items-center">
+    <section id="home" className="relative min-h-screen lg:h-screen lg:min-h-[900px] overflow-hidden bg-black flex items-center pt-28 pb-16 lg:py-0">
       {/* 1. LAYER: Deep Background Image with Slow Zoom & Mouse Parallax */}
       <motion.div 
         className="absolute inset-0 z-0 bg-cover bg-center w-[110%] h-[110%] -left-[5%] -top-[5%]"
@@ -111,7 +115,7 @@ const Hero = () => {
       ></div>
 
       <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center pt-24 lg:pt-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center pt-6 lg:pt-0">
           
           {/* LEFT SIDE: Cinematic Typography & CTAs */}
           <motion.div 
@@ -128,7 +132,7 @@ const Hero = () => {
               <span className="text-brand-primary relative inline-block">
                 INNOVATION
                 {/* Glow behind text */}
-                <span className="absolute inset-0 blur-xl bg-brand-primary/40 -z-10 animate-pulse"></span>
+                <span className="absolute inset-0 blur-xl bg-brand-primary/40 -z-10 animate-pulse" aria-hidden="true"></span>
               </span> 
               <br className="hidden md:block" /> and Excellence
             </motion.h1>
@@ -139,7 +143,7 @@ const Hero = () => {
               transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
               className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto lg:mx-0 font-light border-l-2 border-brand-primary/50 pl-4"
             >
-              Comprehensive solutions for residential, commercial, and sports infrastructure projects engineered for the modern era.
+              Comprehensive steel structure solutions for residential, commercial, and sports infrastructure projects — pre-engineered buildings, space frames, and roofing engineered for the modern era in Kerala and across India.
             </motion.p>
             
             <motion.div 
@@ -153,17 +157,19 @@ const Hero = () => {
                 smooth={true} 
                 duration={500} 
                 offset={-70}
-                className="group relative bg-[#171200] border border-brand-primary text-brand-primary font-bold py-4 px-10 rounded-sm hover:-translate-y-1 transition-all duration-300 text-center uppercase tracking-widest overflow-hidden cursor-pointer"
+                aria-label="Get a free quote for steel structure construction"
+                className="group relative w-full max-w-xs mx-auto sm:w-auto bg-[#171200] border border-brand-primary text-brand-primary font-bold py-4 px-10 rounded-sm hover:-translate-y-1 transition-all duration-300 text-center uppercase tracking-widest overflow-hidden cursor-pointer"
               >
                 <span className="relative z-10 group-hover:text-[#171200] transition-colors duration-300">Get a Quote</span>
-                <span className="absolute inset-0 bg-brand-primary shadow-[0_0_20px_rgba(32,191,85,0.8)] scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 z-0"></span>
+                <span className="absolute inset-0 bg-brand-primary shadow-[0_0_20px_rgba(32,191,85,0.8)] scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 z-0" aria-hidden="true"></span>
               </Link>
               <Link 
                 to="projects" 
                 smooth={true} 
                 duration={500} 
                 offset={-70}
-                className="group bg-white/5 backdrop-blur-md border border-white/10 text-white font-bold py-4 px-10 rounded-sm hover:bg-white/10 hover:border-white/30 hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:-translate-y-1 transition-all duration-300 text-center uppercase tracking-widest cursor-pointer"
+                aria-label="View our steel structure and construction project portfolio"
+                className="group w-full max-w-xs mx-auto sm:w-auto bg-white/5 backdrop-blur-md border border-white/10 text-white font-bold py-4 px-10 rounded-sm hover:bg-white/10 hover:border-white/30 hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:-translate-y-1 transition-all duration-300 text-center uppercase tracking-widest cursor-pointer"
               >
                 View Projects
               </Link>
@@ -204,7 +210,8 @@ const Hero = () => {
                   
                   <img 
                     src={card.image} 
-                    alt={card.title} 
+                    alt={card.alt || card.title} 
+                    loading="lazy"
                     className={`w-full h-full object-cover transition-all duration-700 ${isHovered ? 'scale-110 brightness-110' : 'brightness-75 grayscale-[20%]'}`} 
                   />
                   
@@ -226,7 +233,7 @@ const Hero = () => {
           </motion.div>
 
           {/* MOBILE: Horizontal Snap Scroll Cards */}
-          <div className="lg:hidden mt-8 w-[100vw] relative -ml-4 sm:-ml-6 pr-8">
+          <div className="lg:hidden mt-8 -mx-4 sm:-mx-6 overflow-hidden">
             <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-8 pt-4 px-4 sm:px-6 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
               {cards.map((card, index) => (
                 <div 
@@ -234,7 +241,7 @@ const Hero = () => {
                   className="snap-center shrink-0 w-[280px] h-[350px] relative rounded-2xl overflow-hidden bg-white/5 backdrop-blur-xl border border-white/20 shadow-2xl transition-transform active:scale-95"
                 >
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#030914]/60 to-[#030914] z-10 pointer-events-none"></div>
-                  <img src={card.image} alt={card.title} className="w-full h-full object-cover brightness-90" />
+                  <img src={card.image} alt={card.alt || card.title} loading="lazy" className="w-full h-full object-cover brightness-90" />
                   <div className="absolute bottom-0 left-0 p-6 z-30 w-full border-b-4 border-brand-primary">
                     <h3 className="text-xl font-bold font-heading text-white uppercase tracking-wider mb-1">{card.title}</h3>
                     <p className="text-gray-300 text-sm">{card.subtitle}</p>

@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white pt-20 pb-10">
+    <footer className="bg-gray-900 text-white pt-20 pb-10" role="contentinfo" aria-label="Site footer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           
@@ -8,12 +8,12 @@ const Footer = () => {
           <div className="space-y-6">
             <span className="text-3xl font-bold font-heading text-brand-primary tracking-tighter">TwinLine</span>
             <p className="text-gray-400 leading-relaxed pr-4">
-              Building the future with innovation and excellence. Comprehensive solutions for residential, commercial, and sports infrastructure projects.
+              Building the future with innovation and excellence. Comprehensive pre-engineered steel building (PEB) solutions for residential, commercial, and sports infrastructure projects across Kerala and India.
             </p>
           </div>
 
           {/* Quick Links */}
-          <div>
+          <nav aria-label="Quick links">
             <h4 className="text-lg font-bold font-heading mb-6 uppercase tracking-wider relative inline-block">
               Quick Links
               <span className="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-brand-primary"></span>
@@ -25,10 +25,10 @@ const Footer = () => {
               <li><a href="#projects" className="text-gray-400 hover:text-brand-primary transition-colors">Projects</a></li>
               <li><a href="#contact" className="text-gray-400 hover:text-brand-primary transition-colors">Contact</a></li>
             </ul>
-          </div>
+          </nav>
 
           {/* Services */}
-          <div>
+          <nav aria-label="Services links">
             <h4 className="text-lg font-bold font-heading mb-6 uppercase tracking-wider relative inline-block">
               Services
               <span className="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-brand-primary"></span>
@@ -39,7 +39,7 @@ const Footer = () => {
               <li><a href="https://www.twinlinegroup.com/services" className="text-gray-400 hover:text-brand-primary transition-colors">Multi-Storied Steel Buildings</a></li>
               <li><a href="https://www.twinlinegroup.com/services" className="text-gray-400 hover:text-brand-primary transition-colors">Roofing Solutions</a></li>
             </ul>
-          </div>
+          </nav>
 
           {/* Newsletter */}
           <div>

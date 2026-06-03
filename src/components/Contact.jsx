@@ -75,9 +75,12 @@ const Contact = () => {
         <div className="text-center mb-16">
           <h4 className="text-brand-primary font-semibold tracking-wider uppercase mb-2">Get in Touch</h4>
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-gray-900 mb-4">
-            Have a Project in Mind?
+            Have a Steel Structure Project in Mind?
           </h2>
-          <div className="w-24 h-1 bg-brand-primary mx-auto rounded"></div>
+          <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-base mt-4">
+            Contact TwinLine Group for expert consultation on pre-engineered buildings, PEB structures, sports infrastructure, roofing solutions, and all steel construction needs in Kerala and across India.
+          </p>
+          <div className="w-24 h-1 bg-brand-primary mx-auto rounded mt-4"></div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -89,7 +92,7 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             className="bg-white rounded-lg shadow-xl p-8 lg:p-12"
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6" aria-label="Contact form for project enquiry">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
@@ -183,7 +186,7 @@ const Contact = () => {
             <div>
               <h3 className="text-2xl font-bold font-heading text-gray-900 mb-6">Contact Information</h3>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                Ready to build the future with us? Contact our team for comprehensive solutions for your residential, commercial, or sports infrastructure projects.
+                Ready to build the future with us? Contact our team for comprehensive pre-engineered steel building, PEB, sports infrastructure, and roofing solutions for your residential, commercial, or industrial projects across Kerala.
               </p>
             </div>
 

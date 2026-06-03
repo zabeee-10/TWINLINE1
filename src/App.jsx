@@ -17,6 +17,14 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Skip to main content link for accessibility & SEO */}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-brand-primary focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold focus:text-sm"
+      >
+        Skip to main content
+      </a>
+
       <AnimatePresence>
         {loading && <Loader onComplete={() => setLoading(false)} />}
       </AnimatePresence>
@@ -25,7 +33,7 @@ function App() {
         <div className="opacity-100 transition-opacity duration-1000">
           <Navbar />
           <Hero />
-          <main>
+          <main id="main-content" role="main">
             <About />
             <Services />
 

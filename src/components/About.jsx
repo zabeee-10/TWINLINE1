@@ -51,6 +51,7 @@ const About = () => {
                 muted
                 loop
                 playsInline
+                title="TwinLine Group — Company introduction video showcasing steel structure and construction projects"
               />
             </div>
             
@@ -69,11 +70,11 @@ const About = () => {
           >
             <h4 className="text-brand-primary font-semibold tracking-wider uppercase">About Our Company</h4>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 leading-tight">
-              We provide professional solutions to deliver safe & efficient projects
+              Professional steel structure solutions for safe & efficient construction projects in Kerala
             </h2>
             <div className="w-20 h-1 bg-brand-primary rounded"></div>
             <p className="text-gray-600 text-lg leading-relaxed">
-              Welcome to TwinLine Group, your trusted partner in delivering cutting-edge construction solutions. We specialise in roofing, pre-fabricated steel structures, sports infrastructure, and green building designs, providing exceptional services to meet the diverse needs of our clients.
+              Welcome to TwinLine Group, your trusted partner in delivering cutting-edge construction solutions. We specialise in roofing, pre-engineered steel buildings (PEB), prefabricated steel structures, sports infrastructure, and green building designs, providing exceptional services across Kerala, Malappuram, Kozhikode, Palakkad, and all of India.
             </p>
             <p className="text-gray-600 text-lg leading-relaxed">
               Whether you're looking to build a home, a commercial space, or a world-class sports facility, we have the expertise and experience to bring your vision to life.
@@ -85,6 +86,7 @@ const About = () => {
                   setActiveMediaIndex(0);
                 }} 
                 className="inline-flex items-center text-brand-primary font-bold hover:text-green-700 transition-colors uppercase tracking-widest text-sm focus:outline-none cursor-pointer"
+                aria-label="Read more about TwinLine Group's steel structure construction expertise"
               >
                 READ MORE
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
@@ -147,7 +149,7 @@ const About = () => {
                       <motion.img
                         key={activeMediaIndex}
                         src={aboutGallery[activeMediaIndex].src}
-                        alt="TwinLine About Gallery"
+                        alt="TwinLine Group steel construction project gallery — pre-engineered buildings and sports infrastructure"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}

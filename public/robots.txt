@@ -1,0 +1,10 @@
+# TwinLine Group - robots.txt
+# https://www.twinlinegroup.com
+
+User-agent: *
+Allow: /
+Disallow: /node_modules/
+Disallow: /src/
+
+# Sitemap
+Sitemap: https://www.twinlinegroup.com/sitemap.xml

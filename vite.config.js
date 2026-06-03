@@ -5,4 +5,24 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  build: {
+    // Split vendor chunks for better caching & page speed
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules/react-dom') || id.includes('node_modules/react/')) {
+            return 'vendor';
+          }
+          if (id.includes('node_modules/framer-motion')) {
+            return 'animations';
+          }
+        },
+      },
+    },
+    // Disable source maps for production
+    sourcemap: false,
+    // CSS code splitting
+    cssCodeSplit: true,
+  },
 })
+
