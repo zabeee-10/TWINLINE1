@@ -4,9 +4,10 @@ import logo1 from "../assets/Logos of the projects don/IMG_9853.JPG.jpeg";
 import logo2 from "../assets/Logos of the projects don/IMG_9878.JPG.jpeg";
 import logo3 from "../assets/Logos of the projects don/IMG_9879.PNG";
 import logo4 from "../assets/Logos of the projects don/IMG_9883.PNG";
+import logo5 from "../assets/lo.jpeg";
 
 const Clients = () => {
-  const clients = [logo1, logo2, logo3, logo4];
+  const clients = [logo1, logo2, logo3, logo4, logo5];
 
   return (
     <section className="py-20 bg-white border-t border-gray-100">

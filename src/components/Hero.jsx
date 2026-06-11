@@ -1,6 +1,6 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 
 // Import local assets for Hero cards
 import pebBuildingImg from "../assets/peb building .jpeg";
@@ -128,13 +128,8 @@ const Hero = () => {
               transition={{ duration: 1, ease: "easeOut" }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white font-heading uppercase tracking-tight leading-[1.05]"
             >
-              Building the Future with <br className="hidden md:block" />
-              <span className="text-brand-primary relative inline-block">
-                INNOVATION
-                {/* Glow behind text */}
-                <span className="absolute inset-0 blur-xl bg-brand-primary/40 -z-10 animate-pulse" aria-hidden="true"></span>
-              </span> 
-              <br className="hidden md:block" /> and Excellence
+              Leading <span className="text-brand-primary relative inline-block">Steel Building<span className="absolute inset-0 blur-xl bg-brand-primary/40 -z-10 animate-pulse" aria-hidden="true"></span></span> Contractor <br className="hidden md:block" />
+              & PEB Contractor in Kerala
             </motion.h1>
             
             <motion.p 
@@ -153,10 +148,7 @@ const Hero = () => {
               className="flex flex-col sm:flex-row justify-center lg:justify-start gap-5 pt-4"
             >
               <Link 
-                to="contact" 
-                smooth={true} 
-                duration={500} 
-                offset={-70}
+                to="/#contact" 
                 aria-label="Get a free quote for steel structure construction"
                 className="group relative w-full max-w-xs mx-auto sm:w-auto bg-[#171200] border border-brand-primary text-brand-primary font-bold py-4 px-10 rounded-sm hover:-translate-y-1 transition-all duration-300 text-center uppercase tracking-widest overflow-hidden cursor-pointer"
               >
@@ -164,10 +156,7 @@ const Hero = () => {
                 <span className="absolute inset-0 bg-brand-primary shadow-[0_0_20px_rgba(32,191,85,0.8)] scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 z-0" aria-hidden="true"></span>
               </Link>
               <Link 
-                to="projects" 
-                smooth={true} 
-                duration={500} 
-                offset={-70}
+                to="/#projects" 
                 aria-label="View our steel structure and construction project portfolio"
                 className="group w-full max-w-xs mx-auto sm:w-auto bg-white/5 backdrop-blur-md border border-white/10 text-white font-bold py-4 px-10 rounded-sm hover:bg-white/10 hover:border-white/30 hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:-translate-y-1 transition-all duration-300 text-center uppercase tracking-widest cursor-pointer"
               >

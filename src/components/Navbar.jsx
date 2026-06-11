@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-scroll";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
@@ -16,11 +16,22 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", to: "home" },
-    { name: "About Us", to: "about" },
-    { name: "Services", to: "services" },
-    { name: "Projects", to: "projects" },
-    { name: "Contact", to: "contact" },
+    { name: "Home", to: "/" },
+    { name: "About Us", to: "/#about" },
+    { name: "Services", to: "/#services" },
+    { name: "Projects", to: "/#projects" },
+    { name: "Contact", to: "/#contact" },
+  ];
+
+  const servicesLinks = [
+    { name: "Steel Building", to: "/steel-building-construction" },
+    { name: "PEB Construction", to: "/peb-construction" },
+    { name: "Roofing Solutions", to: "/roofing-solutions" },
+    { name: "Steel Fabrication", to: "/steel-fabrication" },
+    { name: "Warehouse Construction", to: "/warehouse-construction" },
+    { name: "Factory Building", to: "/factory-building" },
+    { name: "Auditorium Construction", to: "/auditorium-construction" },
+    { name: "Structural Steel", to: "/structural-steel" },
   ];
 
   return (
@@ -45,20 +56,25 @@ const Navbar = () => {
           </div>
           
           {/* CENTER: Navigation Links */}
-          <div className="hidden md:flex space-x-1 lg:space-x-4 items-center">
+          <div className="hidden md:flex space-x-1 lg:space-x-4 items-center relative">
             {navLinks.map((link) => (
-              <div key={link.name} className="px-2 lg:px-4">
+              <div key={link.name} className="px-2 lg:px-4 group relative">
                 <Link 
                   to={link.to} 
-                  spy={true}
-                  smooth={true} 
-                  duration={500} 
-                  offset={-90}
-                  activeClass="active"
                   className="nav-link uppercase"
                 >
                   {link.name}
                 </Link>
+                {/* Services Dropdown */}
+                {link.name === "Services" && (
+                  <div className="absolute top-full left-0 mt-4 w-64 bg-[#030914]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 overflow-hidden">
+                    {servicesLinks.map(s => (
+                      <Link key={s.name} to={s.to} className="block px-4 py-3 text-sm text-gray-300 hover:text-brand-primary hover:bg-white/5 transition-colors border-b border-white/5 last:border-0">
+                        {s.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -66,11 +82,8 @@ const Navbar = () => {
           {/* RIGHT: CTA Button */}
           <div className="hidden md:flex items-center">
             <Link 
-              to="contact" 
-              smooth={true} 
-              duration={500} 
-              offset={-90}
-              className="relative group overflow-hidden bg-gradient-to-r from-brand-primary to-green-500 text-white font-bold py-2.5 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_4px_15px_rgba(32,191,85,0.4)] hover:shadow-[0_8px_25px_rgba(32,191,85,0.6)] uppercase tracking-wider text-sm cursor-pointer"
+              to="/#contact" 
+              className="relative group overflow-hidden bg-gradient-to-r from-brand-primary to-green-500 text-white font-bold py-2.5 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-[0_4px_15px_rgba(32,191,85,0.4)] hover:shadow-[0_8px_25px_rgba(32,191,85,0.6)] uppercase tracking-wider text-sm cursor-pointer block"
             >
               <span className="relative z-10">Get a Quote</span>
               <div className="absolute inset-0 w-full h-full bg-white/20 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out z-0"></div>
@@ -106,26 +119,28 @@ const Navbar = () => {
           >
             <div className="bg-[#030914]/95 backdrop-blur-2xl border-x border-b border-white/10 p-6 flex flex-col space-y-4 rounded-b-2xl h-full">
               {navLinks.map((link) => (
-                <Link 
-                  key={link.name} 
-                  to={link.to} 
-                  spy={true}
-                  smooth={true} 
-                  duration={500} 
-                  offset={-90} 
-                  activeClass="text-brand-primary"
-                  onClick={() => setIsOpen(false)} 
-                  className="block px-4 py-3 font-semibold text-white hover:text-brand-primary hover:bg-white/5 rounded-lg uppercase text-sm tracking-wider transition-colors cursor-pointer"
-                >
-                  {link.name}
-                </Link>
+                <div key={link.name}>
+                  <Link 
+                    to={link.to} 
+                    onClick={() => setIsOpen(false)} 
+                    className="block px-4 py-3 font-semibold text-white hover:text-brand-primary hover:bg-white/5 rounded-lg uppercase text-sm tracking-wider transition-colors cursor-pointer"
+                  >
+                    {link.name}
+                  </Link>
+                  {link.name === "Services" && (
+                    <div className="pl-8 flex flex-col space-y-1 border-l border-white/10 ml-6">
+                      {servicesLinks.map(s => (
+                        <Link key={s.name} to={s.to} onClick={() => setIsOpen(false)} className="py-2 text-sm text-gray-400 hover:text-brand-primary">
+                          {s.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
               <div className="pt-4 mt-2 border-t border-white/10 w-full">
                 <Link 
-                  to="contact" 
-                  smooth={true} 
-                  duration={500} 
-                  offset={-90}
+                  to="/#contact" 
                   onClick={() => setIsOpen(false)}
                   className="block text-center bg-gradient-to-r from-brand-primary to-green-500 text-white font-bold py-3 rounded-lg shadow-[0_4px_15px_rgba(32,191,85,0.4)] uppercase tracking-wider cursor-pointer"
                 >

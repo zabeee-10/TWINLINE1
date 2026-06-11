@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Play } from "lucide-react";
+import { Link } from "react-router-dom";
 import spaceFramesImage from "../assets/space frames.jpeg";
 
 import pebImg1 from "../assets/peb/WhatsApp Image 2026-06-03 at 2.25.06 AM.jpeg";
@@ -17,7 +18,7 @@ import tsImg2 from "../assets/Prefabricated Tubular Steel Structures/WhatsApp Im
 import tsImg3 from "../assets/Prefabricated Tubular Steel Structures/WhatsApp Image 2026-06-03 at 2.28.16 AM.jpeg";
 import tsVid1 from "../assets/Prefabricated Tubular Steel Structures/WhatsApp Video 2026-06-03 at 2.28.16 AM.mp4";
 
-import multiStoriedImg from "../assets/canopy/fff.jpeg";
+import multiStoriedImg from "../assets/mux.jpeg";
 import tubularSteelImage from "../assets/Prefabricated Tubular Steel Structuress.jpeg";
 
 const Services = () => {
@@ -41,6 +42,7 @@ const Services = () => {
         { type: "video", src: pebVid2 }
       ],
       detailedDescription: "Pre-Engineered Buildings (PEB) are steel structures engineered at a factory and assembled on site. Designed to be structurally efficient and lightweight, PEBs offer quick turnaround, high seismic resistance, low maintenance costs, and completely flexible expansion capabilities. Twinline specializes in custom PEB structures for commercial warehouses, manufacturing industrial sheds, and multi-span retail buildings.",
+      link: "/peb-construction"
     },
     {
       num: "02",
@@ -55,6 +57,7 @@ const Services = () => {
         { type: "video", src: sfVid1 }
       ],
       detailedDescription: "A space frame or space structure is a robust, lightweight, and rigid truss structure constructed from interlocking struts in a geometric pattern. These frames are engineered to span large areas with minimal interior support columns, making them perfect for grand entrances, convention centers, stadiums, airport terminals, and malls. Twinline designs and fabricates high-precision space frames that are highly wind-resistant and seismically compliant.",
+      link: "/structural-steel"
     },
     {
       num: "03",
@@ -69,17 +72,18 @@ const Services = () => {
         { type: "video", src: tsVid1 }
       ],
       detailedDescription: "Prefabricated tubular steel structures provide high torsional resistance, smooth exterior finishes, and exceptional load-bearing strength. Utilizing hollow circular or rectangular steel profiles, these tubular frames are pre-fabricated under strict quality standards and bolted together on site. They are earthquake-resistant, quick to erect, require minimal maintenance, and are highly customizable for architecturally expressive designs.",
+      link: "/steel-building-construction"
     },
     {
       num: "04",
       title: "Multi-storied Steel Buildings",
       description: "Faster to build, lighter on foundations, and highly flexible in design. Ideal for offices, schools, and hospitals.",
-      image: "https://static.wixstatic.com/media/6eacb8_7ebc8bbdde114ccd83b13a9d26a54c1d~mv2.jpg/v1/fit/w_480,h_479,q_90,enc_avif,quality_auto/6eacb8_7ebc8bbdde114ccd83b13a9d26a54c1d~mv2.jpg",
+      image: multiStoriedImg,
       gallery: [
-        { type: "image", src: "https://static.wixstatic.com/media/6eacb8_7ebc8bbdde114ccd83b13a9d26a54c1d~mv2.jpg/v1/fit/w_480,h_479,q_90,enc_avif,quality_auto/6eacb8_7ebc8bbdde114ccd83b13a9d26a54c1d~mv2.jpg" },
         { type: "image", src: multiStoriedImg }
       ],
       detailedDescription: "Multi-storied steel buildings are the pinnacle of modern vertical development. Offering rapid speed of construction, lighter load distribution on foundations, and highly flexible architectural layout possibilities, steel-framed high-rises are the premier choice for modern commercial office spaces, educational campuses, and multi-specialty healthcare facilities. Twinline executes precision engineering and safety compliance fabrication for multi-tiered structures.",
+      link: "/structural-steel"
     }
   ];
 
@@ -198,13 +202,13 @@ const Services = () => {
                 </p>
                 
                 <div className="pt-4 border-t border-gray-50 flex items-center justify-between mt-auto">
-                  <button 
-                    onClick={() => handleOpenService(service)}
+                  <Link 
+                    to={service.link}
                     className="text-brand-primary font-bold text-xs hover:text-emerald-600 transition-colors uppercase tracking-wider cursor-pointer focus:outline-none text-left"
                     aria-label={`Learn more about ${service.title} service by TwinLine Group`}
                   >
                     LEARN MORE
-                  </button>
+                  </Link>
                   <span className="w-1.5 h-1.5 bg-brand-primary rounded-full group-hover:scale-150 transition-transform"></span>
                 </div>
               </div>

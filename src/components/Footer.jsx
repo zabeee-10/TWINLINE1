@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white pt-20 pb-10" role="contentinfo" aria-label="Site footer">
@@ -19,11 +21,11 @@ const Footer = () => {
               <span className="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-brand-primary"></span>
             </h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-400 hover:text-brand-primary transition-colors">Home</a></li>
-              <li><a href="#about" className="text-gray-400 hover:text-brand-primary transition-colors">About Us</a></li>
-              <li><a href="#services" className="text-gray-400 hover:text-brand-primary transition-colors">Services</a></li>
-              <li><a href="#projects" className="text-gray-400 hover:text-brand-primary transition-colors">Projects</a></li>
-              <li><a href="#contact" className="text-gray-400 hover:text-brand-primary transition-colors">Contact</a></li>
+              <li><Link to="/" className="text-gray-400 hover:text-brand-primary transition-colors">Home</Link></li>
+              <li><Link to="/#about" className="text-gray-400 hover:text-brand-primary transition-colors">About Us</Link></li>
+              <li><Link to="/#services" className="text-gray-400 hover:text-brand-primary transition-colors">Services</Link></li>
+              <li><Link to="/#projects" className="text-gray-400 hover:text-brand-primary transition-colors">Projects</Link></li>
+              <li><Link to="/#contact" className="text-gray-400 hover:text-brand-primary transition-colors">Contact</Link></li>
             </ul>
           </nav>
 
@@ -34,10 +36,14 @@ const Footer = () => {
               <span className="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-brand-primary"></span>
             </h4>
             <ul className="space-y-3">
-              <li><a href="https://www.twinlinegroup.com/services" className="text-gray-400 hover:text-brand-primary transition-colors">Pre-Engineered Buildings</a></li>
-              <li><a href="https://www.twinlinegroup.com/services" className="text-gray-400 hover:text-brand-primary transition-colors">Tubular Steel Structure</a></li>
-              <li><a href="https://www.twinlinegroup.com/services" className="text-gray-400 hover:text-brand-primary transition-colors">Multi-Storied Steel Buildings</a></li>
-              <li><a href="https://www.twinlinegroup.com/services" className="text-gray-400 hover:text-brand-primary transition-colors">Roofing Solutions</a></li>
+              <li><Link to="/steel-building-construction" className="text-gray-400 hover:text-brand-primary transition-colors">Steel Building Construction</Link></li>
+              <li><Link to="/peb-construction" className="text-gray-400 hover:text-brand-primary transition-colors">PEB Construction</Link></li>
+              <li><Link to="/roofing-solutions" className="text-gray-400 hover:text-brand-primary transition-colors">Roofing Solutions</Link></li>
+              <li><Link to="/steel-fabrication" className="text-gray-400 hover:text-brand-primary transition-colors">Steel Fabrication</Link></li>
+              <li><Link to="/warehouse-construction" className="text-gray-400 hover:text-brand-primary transition-colors">Warehouse Construction</Link></li>
+              <li><Link to="/factory-building" className="text-gray-400 hover:text-brand-primary transition-colors">Factory Building</Link></li>
+              <li><Link to="/auditorium-construction" className="text-gray-400 hover:text-brand-primary transition-colors">Auditorium Construction</Link></li>
+              <li><Link to="/structural-steel" className="text-gray-400 hover:text-brand-primary transition-colors">Structural Steel Projects</Link></li>
             </ul>
           </nav>
 

@@ -28,7 +28,7 @@ const Contact = () => {
     
     if (!accessKey || accessKey.trim() === "" || accessKey === "YOUR_ACCESS_KEY_HERE") {
       // Fallback: Programmatic mailto link
-      const mailtoUrl = `mailto:sale@twinlinegroup.com?subject=${encodeURIComponent(
+      const mailtoUrl = `mailto:sales@twinlinegroup.com?subject=${encodeURIComponent(
         formData.subject || "Enquiry from TwinLine Website"
       )}&body=${encodeURIComponent(
         `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
@@ -258,7 +258,7 @@ const Contact = () => {
                 <div className="ml-4">
                   <h4 className="text-lg font-bold text-gray-900 leading-none mb-2">Email Us</h4>
                   <p className="text-gray-600 text-sm leading-relaxed mt-1">
-                    <a href="mailto:sale@twinlinegroup.com" className="hover:text-brand-primary transition-colors">sale@twinlinegroup.com</a>
+                    <a href="mailto:sales@twinlinegroup.com" className="hover:text-brand-primary transition-colors">sales@twinlinegroup.com</a>
                     <br/>
                     <a href="mailto:tech@twinlinegroup.com" className="hover:text-brand-primary transition-colors">tech@twinlinegroup.com</a>
                   </p>

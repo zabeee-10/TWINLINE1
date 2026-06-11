@@ -1,19 +1,31 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Loader from './components/Loader';
-
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-
-import Projects from './components/Projects';
-import Clients from './components/Clients';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
+
+// Pages
+import Home from './pages/Home';
+import SteelBuildingConstruction from './pages/SteelBuildingConstruction';
+import PebConstruction from './pages/PebConstruction';
+import RoofingSolutions from './pages/RoofingSolutions';
+import SteelFabrication from './pages/SteelFabrication';
+import WarehouseConstruction from './pages/WarehouseConstruction';
+import FactoryBuildingConstruction from './pages/FactoryBuildingConstruction';
+import AuditoriumConstruction from './pages/AuditoriumConstruction';
+import StructuralSteelProjects from './pages/StructuralSteelProjects';
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const location = useLocation();
+
+  // Scroll to top on route change
+  useEffect(() => {
+    if (!location.hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [location.pathname, location.hash]);
 
   return (
     <div className="min-h-screen bg-white">
@@ -32,15 +44,17 @@ function App() {
       {!loading && (
         <div className="opacity-100 transition-opacity duration-1000">
           <Navbar />
-          <Hero />
-          <main id="main-content" role="main">
-            <About />
-            <Services />
-
-            <Projects />
-            <Clients />
-            <Contact />
-          </main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/steel-building-construction" element={<SteelBuildingConstruction />} />
+            <Route path="/peb-construction" element={<PebConstruction />} />
+            <Route path="/roofing-solutions" element={<RoofingSolutions />} />
+            <Route path="/steel-fabrication" element={<SteelFabrication />} />
+            <Route path="/warehouse-construction" element={<WarehouseConstruction />} />
+            <Route path="/factory-building" element={<FactoryBuildingConstruction />} />
+            <Route path="/auditorium-construction" element={<AuditoriumConstruction />} />
+            <Route path="/structural-steel" element={<StructuralSteelProjects />} />
+          </Routes>
           <Footer />
         </div>
       )}
