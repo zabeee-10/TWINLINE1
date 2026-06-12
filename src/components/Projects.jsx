@@ -2,7 +2,6 @@ import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Grid, List, Search, ArrowUpRight, Compass, X, Play } from "lucide-react";
 
-import alhindFlat from "../assets/projects  twin/alhind flat.jpeg";
 import badmintonCourt from "../assets/projects  twin/Badminton Court.jpeg";
 import butterflyStructure from "../assets/projects  twin/Butterfly Structure.jpeg";
 import keralaMedicalCollege from "../assets/projects  twin/Kerala Medical College.jpeg";
@@ -15,7 +14,6 @@ import turfImage from "../assets/projects  twin/turf.jpeg";
 
 import pkDas1 from "../assets/pk das images/WhatsApp Image 2026-06-03 at 1.26.04 AM (1).jpeg";
 import pkDas2 from "../assets/pk das images/WhatsApp Image 2026-06-03 at 1.26.04 AM.jpeg";
-import alhindVideo from "../assets/intro video/alhind vdo.mp4";
 import medicalCollegeVideo from "../assets/intro video/medical college vdo.mp4";
 import turfVideo from "../assets/intro video/turf vdo.mp4";
 import mezzanineImg from "../assets/pk das images/WhatsApp Image 2026-06-03 at 2.02.03 AM.jpeg";
@@ -76,21 +74,7 @@ const Projects = () => {
       detailedDescription: "The Kerala Medical College project at Mangode, Palakkad involved structural design, fabrication, and precise installation of robust pre-engineered columns and heavy-duty steel roof trusses. Twinline engineered columns and support infrastructure to guarantee the highest level of structural strength and compliance with safety regulations. Watch the site walk-through video in our gallery to see the framing execution phase.",
       specs: "Industrial Steel Truss"
     },
-    {
-      id: 3,
-      title: "Alhind Flat",
-      subtitle: "Residential Apartment Block",
-      location: "Calicut",
-      category: "Residential",
-      image: alhindFlat,
-      gallery: [
-        { type: "image", src: alhindFlat },
-        { type: "video", src: alhindVideo }
-      ],
-      description: "Structural metal deck slab framing and architectural metal design installations.",
-      detailedDescription: "The Alhind Flat project is a landmark multi-storey residential development in Calicut. Twinline was chosen to deliver state-of-the-art structural metal deck slab framing and architectural steel installations. This approach optimized the construction timeline, reduced foundation loads, and ensured unmatched structural alignment across all apartment floors. Watch our project walk-through video in our gallery to see the fabrication and installation phases on-site.",
-      specs: "Multi-Storey Decking"
-    },
+
     {
       id: 4,
       title: "Mezzanine Floor Structure",
