@@ -18,8 +18,8 @@ import tsImg2 from "../assets/Prefabricated Tubular Steel Structures/WhatsApp Im
 import tsImg3 from "../assets/Prefabricated Tubular Steel Structures/WhatsApp Image 2026-06-03 at 2.28.16 AM.jpeg";
 import tsVid1 from "../assets/Prefabricated Tubular Steel Structures/WhatsApp Video 2026-06-03 at 2.28.16 AM.mp4";
 
-import multiStoriedImg from "../assets/mux.jpeg";
-import tubularSteelImage from "../assets/Prefabricated Tubular Steel Structuress.jpeg";
+import multiStoriedImg from "../assets/WhatsApp Image 2026-04-29 at 10.32.19 PM.jpeg";
+import tubularSteelImage from "../assets/pre.jpeg";
 
 const Services = () => {
   const [selectedService, setSelectedService] = useState(null);
@@ -35,7 +35,7 @@ const Services = () => {
       num: "01",
       title: "Pre-Engineered Buildings (PEB)",
       description: "Steel structures built to save time and money, with fast assembly and flexible designs. Great for warehouses, factories, offices, or shops.",
-      image: "https://static.wixstatic.com/media/6eacb8_7e7c84dab4304e72a7aa51b002e5f5be~mv2.jpg/v1/fit/w_480,h_479,q_90,enc_avif,quality_auto/6eacb8_7e7c84dab4304e72a7aa51b002e5f5be~mv2.jpg",
+      image: pebImg1,
       gallery: [
         { type: "image", src: pebImg1 },
         { type: "video", src: pebVid1 },
@@ -48,7 +48,7 @@ const Services = () => {
       num: "02",
       title: "Space Frames",
       description: "Strong, lightweight truss structures for wide spaces with fewer supports. Perfect for malls, stadiums, and convention centers—durable and stylish.",
-      image: spaceFramesImage,
+      image: sfImg1,
       gallery: [
         { type: "image", src: spaceFramesImage },
         { type: "image", src: sfImg1 },
@@ -116,142 +116,145 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-24 bg-white relative overflow-hidden">
-      {/* Decorative side accent lines */}
-      <div className="absolute top-1/3 left-0 w-2 h-32 bg-brand-primary/10 rounded-r-lg"></div>
-      <div className="absolute bottom-1/3 right-0 w-2 h-32 bg-brand-primary/10 rounded-l-lg"></div>
+    <section id="services" className="py-24 md:py-32 bg-[#0b1d26] relative overflow-hidden font-sans">
+      
+      {/* Decorative background gradients to give depth (optional) */}
+      <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-black/40 to-transparent pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         
-        {/* Section Heading aligned to Corporate Brochure */}
-        <div className="text-center mb-20 max-w-3xl mx-auto">
-          <motion.h4 
+        {/* Section Heading */}
+        <div className="text-center mb-24 max-w-3xl mx-auto">
+          <motion.div 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-brand-primary font-bold tracking-widest uppercase mb-3 text-xs md:text-sm"
+            className="flex items-center justify-center gap-4 mb-4"
           >
-            Our Services
-          </motion.h4>
+            <div className="w-12 h-[2px] bg-brand-primary"></div>
+            <h4 className="text-brand-primary font-bold tracking-[0.2em] uppercase text-sm">
+              Our Services
+            </h4>
+          </motion.div>
+          
           <motion.h2 
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-heading font-bold text-gray-900 mb-5 tracking-tight leading-tight uppercase"
+            className="text-4xl md:text-5xl lg:text-6xl font-heading font-normal text-white mb-6 leading-tight capitalize"
           >
             Steel Structure Solutions
           </motion.h2>
-          <motion.div 
-            initial={{ width: 0 }}
-            whileInView={{ width: "96px" }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-24 h-1 bg-brand-primary mx-auto rounded-full mb-6"
-          ></motion.div>
+          
           <motion.p 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="text-gray-500 text-sm md:text-base leading-relaxed"
+            transition={{ delay: 0.2 }}
+            className="text-gray-400 text-base md:text-lg leading-relaxed max-w-2xl mx-auto"
           >
-            We provide cutting-edge pre-engineered building (PEB), space frame, tubular steel, and multi-storied steel structure solutions along with high-performance sports infrastructure — ensuring cost-efficiency, durability, and rapid execution across Kerala and India.
+            We provide cutting-edge pre-engineered building (PEB), space frame, tubular steel, and multi-storied steel structure solutions along with high-performance sports infrastructure.
           </motion.p>
         </div>
 
-        {/* 4-Column Responsive Grid */}
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-        >
-          {services.map((service, index) => (
-            <motion.div 
-              key={index}
-              variants={itemVariants}
-              className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col h-full relative"
-            >
-              {/* Image Frame */}
-              <div className="h-48 overflow-hidden relative bg-gray-100">
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors z-10 duration-300"></div>
-                
-                {/* Floating Numeric Badge */}
-                <span className="absolute top-4 right-4 z-20 bg-white/90 backdrop-blur-xs text-brand-primary text-xs font-bold px-2.5 py-1 rounded-lg border border-gray-100">
-                  {service.num}
-                </span>
+        {/* Staggered Layout */}
+        <div className="flex flex-col gap-32 md:gap-48">
+          {services.map((service, index) => {
+            const isEven = index % 2 === 0;
+            return (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center justify-between gap-12 md:gap-24`}
+              >
+                {/* Text Content */}
+                <div className="w-full md:w-1/2 relative z-10 flex flex-col justify-center">
+                  
+                  {/* Watermark Number */}
+                  <span className="absolute -left-8 md:-left-16 -top-12 md:-top-20 text-[10rem] md:text-[14rem] font-bold text-white/5 select-none z-[-1] leading-none tracking-tighter">
+                    {service.num}
+                  </span>
 
-                <img 
-                  src={service.image} 
-                  alt={`${service.title} — steel structure construction service by TwinLine Group Kerala`} 
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
-                  loading="lazy"
-                />
-              </div>
+                  {/* Subtitle / Category */}
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-16 h-[2px] bg-brand-primary"></div>
+                    <span className="text-brand-primary font-bold text-sm tracking-[0.2em] uppercase">
+                      Core Solution
+                    </span>
+                  </div>
 
-              {/* Card Body */}
-              <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-base font-bold font-heading text-gray-900 group-hover:text-brand-primary transition-colors duration-300 min-h-12 flex items-center mb-3">
-                  {service.title}
-                </h3>
-                
-                <p className="text-gray-500 text-xs md:text-sm leading-relaxed mb-6 flex-grow">
-                  {service.description}
-                </p>
-                
-                <div className="pt-4 border-t border-gray-50 flex items-center justify-between mt-auto">
+                  {/* Title */}
+                  <h3 className="text-4xl md:text-5xl font-heading font-normal text-white leading-[1.2] mb-6">
+                    {service.title}
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-8 font-light">
+                    {service.description}
+                  </p>
+                  
+                  {/* Link */}
                   <Link 
                     to={service.link}
-                    className="text-brand-primary font-bold text-xs hover:text-emerald-600 transition-colors uppercase tracking-wider cursor-pointer focus:outline-none text-left"
-                    aria-label={`Learn more about ${service.title} service by TwinLine Group`}
+                    className="inline-flex items-center gap-3 text-brand-primary font-bold text-sm hover:text-white transition-colors duration-300 group"
+                    aria-label={`Read more about ${service.title}`}
                   >
-                    LEARN MORE
+                    <span>read more</span>
+                    <svg className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
                   </Link>
-                  <span className="w-1.5 h-1.5 bg-brand-primary rounded-full group-hover:scale-150 transition-transform"></span>
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
 
+                {/* Image */}
+                <div className={`w-full md:w-1/2 flex ${isEven ? 'justify-end' : 'justify-start'}`}>
+                  <div className="w-full max-w-[480px] aspect-[4/5] overflow-hidden shadow-2xl relative">
+                    <img 
+                      src={service.image} 
+                      alt={service.title} 
+                      className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-1000 ease-out"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
 
       </div>
 
-      {/* Detail Modal overlay */}
+      {/* Detail Modal overlay (Keeping original modal functionality) */}
       <AnimatePresence>
         {selectedService && (
           <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 sm:p-6 md:p-8">
-            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedService(null)}
-              className="absolute inset-0 bg-black/80 backdrop-blur-md"
+              className="absolute inset-0 bg-black/90 backdrop-blur-md"
             />
 
-            {/* Modal Box */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 30 }}
               transition={{ type: "spring", duration: 0.5 }}
-              className="relative w-full max-w-4xl bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row max-h-[90vh] md:max-h-[80vh] z-10"
+              className="relative w-full max-w-4xl bg-[#0b1d26] rounded-sm overflow-hidden shadow-2xl flex flex-col md:flex-row max-h-[90vh] md:max-h-[80vh] z-10 border border-white/10"
             >
-              {/* Close Button */}
               <button
                 onClick={() => setSelectedService(null)}
-                className="absolute top-4 right-4 z-50 p-2.5 rounded-full bg-white/10 hover:bg-white/20 md:bg-gray-100 md:hover:bg-gray-200 text-white md:text-gray-600 transition-colors shadow-md focus:outline-none cursor-pointer"
-                aria-label="Close modal"
+                className="absolute top-4 right-4 z-50 p-2 text-white/50 hover:text-white transition-colors cursor-pointer"
               >
-                <X size={20} />
+                <X size={24} strokeWidth={1.5} />
               </button>
 
-              {/* Left Column: Image Viewer */}
-              <div className="w-full md:w-1/2 bg-gray-950 flex flex-col justify-between relative min-h-[300px] md:min-h-[400px]">
-                {/* Main Active Image/Video */}
+              <div className="w-full md:w-1/2 bg-black flex flex-col justify-between relative min-h-[300px] md:min-h-[400px]">
                 <div className="relative flex-1 flex items-center justify-center overflow-hidden">
                   <AnimatePresence mode="wait">
                     {mediaItems[activeMediaIndex]?.type === "video" ? (
@@ -280,21 +283,16 @@ const Services = () => {
                       />
                     )}
                   </AnimatePresence>
-                  {/* Service Number Tag */}
-                  <span className="absolute top-4 left-4 bg-brand-primary/95 text-white text-xs font-bold px-3.5 py-1.5 rounded-xl shadow-md z-30">
-                    Service {selectedService.num}
-                  </span>
                 </div>
 
-                {/* Gallery Thumbnail Strip */}
                 {mediaItems.length > 1 && (
-                  <div className="p-4 bg-black/60 backdrop-blur-xs flex items-center gap-3 overflow-x-auto border-t border-white/10 z-30">
+                  <div className="p-4 bg-black/80 flex items-center gap-3 overflow-x-auto border-t border-white/10 z-30">
                     {mediaItems.map((item, i) => (
                       <button
                         key={i}
                         onClick={() => setActiveMediaIndex(i)}
-                        className={`relative w-16 h-12 rounded-lg overflow-hidden flex-shrink-0 transition-all border-2 cursor-pointer ${
-                          activeMediaIndex === i ? "border-brand-primary scale-105" : "border-transparent opacity-60 hover:opacity-100"
+                        className={`relative w-16 h-12 overflow-hidden flex-shrink-0 transition-all border ${
+                          activeMediaIndex === i ? "border-brand-primary" : "border-transparent opacity-50 hover:opacity-100"
                         }`}
                       >
                         {item.type === "video" ? (
@@ -310,37 +308,29 @@ const Services = () => {
                 )}
               </div>
 
-              {/* Right Column: Service details */}
-              <div className="w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-between overflow-y-auto max-h-[50vh] md:max-h-full">
+              <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-between overflow-y-auto max-h-[50vh] md:max-h-full">
                 <div className="space-y-6">
-                  {/* Subtitle / badge */}
-                  <div className="text-brand-primary text-xs font-bold uppercase tracking-wider">
-                    Core Solutions
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-8 h-[1px] bg-brand-primary"></div>
+                    <span className="text-brand-primary text-xs tracking-[0.2em] uppercase">
+                      Core Solution
+                    </span>
                   </div>
 
-                  {/* Title */}
-                  <div>
-                    <h3 className="text-xl md:text-2xl font-heading font-bold text-gray-900 leading-tight">
-                      {selectedService.title}
-                    </h3>
-                  </div>
+                  <h3 className="text-2xl md:text-3xl font-heading font-normal text-white leading-tight">
+                    {selectedService.title}
+                  </h3>
 
-                  {/* Divider */}
-                  <div className="w-16 h-1 bg-brand-primary rounded-full"></div>
-
-                  {/* Description */}
-                  <div className="space-y-4">
-                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest">Service Overview</h4>
-                    <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                  <div className="space-y-4 pt-6">
+                    <p className="text-gray-400 text-sm md:text-base leading-relaxed font-light">
                       {selectedService.detailedDescription || selectedService.description}
                     </p>
                   </div>
                 </div>
 
-                {/* Footer notes */}
-                <div className="pt-6 mt-6 border-t border-gray-100 flex flex-wrap items-center justify-between gap-4 text-xs text-gray-400 font-medium">
-                  <span>Advanced Structural Engineering</span>
-                  <span>Efficient Assembly</span>
+                <div className="pt-8 mt-8 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs text-white/30 tracking-widest uppercase">
+                  <span>Twinline Group</span>
+                  <span>Steel Structures</span>
                 </div>
               </div>
             </motion.div>

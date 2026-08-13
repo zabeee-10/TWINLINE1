@@ -115,7 +115,7 @@ const Hero = () => {
       ></div>
 
       <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center pt-6 lg:pt-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center pt-6 lg:pt-32">
           
           {/* LEFT SIDE: Cinematic Typography & CTAs */}
           <motion.div 

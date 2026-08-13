@@ -7,7 +7,7 @@ import butterflyStructure from "../assets/projects  twin/Butterfly Structure.jpe
 import keralaMedicalCollege from "../assets/projects  twin/Kerala Medical College.jpeg";
 import mesMedicalCollege from "../assets/projects  twin/MES Medical College.jpeg";
 import mezzanineFloorStructure from "../assets/projects  twin/Mezzanine Floor Structure.jpeg";
-import pkDasMedicalSciences from "../assets/projects  twin/PK DAS Institute of Medical Sciences.jpeg";
+import pkDasMedicalSciences from "../assets/pk.jpeg";
 import residentialContemporary from "../assets/projects  twin/Residential Property Contemporary.jpeg";
 import residentialModern from "../assets/projects  twin/Residential Property modern.jpeg";
 import turfImage from "../assets/projects  twin/turf.jpeg";
